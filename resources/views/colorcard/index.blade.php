@@ -12,7 +12,7 @@ Color Cards
             <a href="{{ route('colorcard.create') }}" class="btn btn-success">Tambah Category</a>
         </div>
         <div class="card-body">
-            <table class="table table-sm">
+            <table class="table table-sm" id="myTable">
                 <thead>
                     <tr>
                         <th>NO</th>
@@ -48,3 +48,21 @@ Color Cards
 </section>  
 
 @endsection
+
+
+@push('scripts')
+ <!-- DataTables -->
+ <script src="{{ asset('plugins/datatables/jquery.dataTables.js') }}"></script>
+ <script src="{{ asset('plugins/datatables/dataTables.bootstrap4.js') }}"></script>
+ <script>
+        
+    $.extend( true, $.fn.dataTable.defaults, {
+		"pageLength": 50
+	});
+    $(document).ready( function () {
+        $('#myTable').DataTable();
+    } );
+
+       
+</script>
+@endpush

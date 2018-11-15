@@ -20,6 +20,7 @@ class ColorCardController extends Controller
         $data['menu'] = 2;
         $data['colorcards'] = ColorCard::all(); 
         $data['no'] = 1;
+        $data['submenu'] = 1;
         return view('colorcard.index', $data);
     }
 
@@ -31,6 +32,7 @@ class ColorCardController extends Controller
     public function create()
     {
         $data['menu'] = 2;
+        $data['submenu'] = 1;
         $data['categories'] = Category::all();
         return view('colorcard.create', $data);
     }
@@ -62,6 +64,7 @@ class ColorCardController extends Controller
     public function edit($id)
     {
         $data['menu'] = 2;
+        $data['submenu'] = 1;
         $data['categories'] = Category::all();
         $data['colorcard'] = ColorCard::find($id);
         return view('colorcard.edit', $data);

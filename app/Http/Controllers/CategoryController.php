@@ -17,6 +17,7 @@ class CategoryController extends Controller
     public function index()
     {
         $data['menu'] = 1;
+        $data['submenu'] = 1;
         $data['no'] = 1;
         $data['categories'] = Category::all();
         return view('category.index', $data);
@@ -30,6 +31,7 @@ class CategoryController extends Controller
     public function create()
     {
         $data['menu'] = 1;
+        $data['submenu'] = 1;
         return view('category.create', $data);
     }
 
@@ -61,6 +63,7 @@ class CategoryController extends Controller
     {
         $data['category'] = Category::find($id);
         $data['menu'] = 1;
+        $data['submenu'] = 1;
         return view('category.edit', $data);
     }
 

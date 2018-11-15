@@ -25,8 +25,6 @@
     <!-- datepicker -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-    <link rel="stylesheet" href="{{ asset('style.css')}}">
-
     <link rel="icon" href="{{ asset('dist/img/AdminLTELogo.png')}}">
 </head>
 

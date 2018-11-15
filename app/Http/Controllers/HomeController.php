@@ -24,6 +24,7 @@ class HomeController extends Controller
     public function index()
     {
         $data['menu'] = 0;
+        $data['submenu'] = 0;
         return view('home', $data);
     }
 }

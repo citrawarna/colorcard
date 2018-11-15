@@ -27,7 +27,7 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                     with font-awesome or any other icon font library -->
-                <li class="nav-item has-treeview menu-open">
+                <li class="nav-item has-treeview {{ ($submenu == 1 ? 'menu-open' : '') }}">
                     <a href="#" class="nav-link ">
                         <i class="nav-icon fa fa-list"></i>
                         <p>
@@ -46,6 +46,30 @@
                             <a href="{{ route('colorcard.index') }}" class="nav-link {{ ($menu==2 ? 'active' : '') }} ">
                                 <i class="fa fa-circle-o nav-icon"></i>
                                 <p>Data Color Card</p>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview {{ ($submenu == 2 ? 'menu-open' : '') }}">
+                    <a href="#" class="nav-link ">
+                        <i class="nav-icon fa fa-cart-plus"></i>
+                        <p>
+                        TRANSAKSI
+                        <i class="right fa fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('receive.index') }}" class="nav-link {{ ($menu==3 ? 'active' : '') }} ">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Terima Barang</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('colorcard.index') }}" class="nav-link {{ ($menu==4 ? 'active' : '') }} ">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Kirim Barang</p>
                             </a>
                         </li>
                         
