@@ -43,7 +43,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="  " class="nav-link ">
+                            <a href="{{ route('colorcard.index') }}" class="nav-link {{ ($menu==2 ? 'active' : '') }} ">
                                 <i class="fa fa-circle-o nav-icon"></i>
                                 <p>Data Color Card</p>
                             </a>

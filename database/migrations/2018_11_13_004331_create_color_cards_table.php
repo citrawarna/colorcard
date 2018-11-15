@@ -13,7 +13,7 @@ class CreateColorcardsTable extends Migration
      */
     public function up()
     {
-        Schema::create('colorcards', function (Blueprint $table) {
+        Schema::create('color_cards', function (Blueprint $table) {
             $table->increments('id');
             $table->string('cc_name');
             $table->integer('category_id')->unsigned();

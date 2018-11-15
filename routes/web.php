@@ -17,3 +17,5 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::resource('category', 'CategoryController')->middleware('auth');
+
+Route::resource('colorcard', 'ColorCardController')->middleware('auth');
