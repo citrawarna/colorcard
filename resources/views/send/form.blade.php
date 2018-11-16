@@ -17,7 +17,7 @@ Kirim Color Card
             @csrf
             <div class="card-header">
                 <strong>Color Card Kirim Ke : </strong> 
-                <select name="divisi_id">
+                <select name="division_id">
                     <option value="">- Pilih Divisi -</option>
                     <option value="1">Citra Warna 01</option>
                     <option value="2">Citra Warna 02</option>

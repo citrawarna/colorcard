@@ -20,6 +20,8 @@ Route::resource('category', 'CategoryController')->middleware('auth');
 
 Route::resource('colorcard', 'ColorCardController')->middleware('auth');
 
+Route::resource('division', 'DivisionController')->middleware('auth');
+
 Route::get('receive', 'ReceiveController@form')->middleware('auth')->name('receive.index');
 
 Route::post('receive/store', 'ReceiveController@store')->middleware('auth')->name('receive.store');

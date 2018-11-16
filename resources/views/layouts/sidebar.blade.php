@@ -48,6 +48,13 @@
                                 <p>Data Color Card</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('division.index') }}" class="nav-link {{ ($menu==5 ? 'active' : '') }} ">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Data Devision</p>
+                            </a>
+                        </li>
+                        
                         
                     </ul>
                 </li>

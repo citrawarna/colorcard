@@ -15,7 +15,7 @@ class CreateDivisionsTable extends Migration
     {
         Schema::create('divisions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('devisi_name')->unique();
+            $table->string('division_name')->unique();
             $table->timestamps();
             $table->softDeletes();
         });
