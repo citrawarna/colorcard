@@ -19,6 +19,7 @@ class CreateSendsTable extends Migration
             $table->integer('colorcard_id')->unsigned();
             $table->integer('amount')->default(0);
             $table->string('description');
+            $table->date('date');
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('division_id')->references('id')->on('divisions')->onDelete('cascade');

@@ -45,7 +45,7 @@ Form Terima Barang
                     </tbody>
                 </table>
                 <strong><a href="#" class="btn-plus"> <i class="fa fa-plus"></i> Tambah Form</a></strong><br><br>
-                <button type="submit" class="btn btn-primary btn-lg float-right">Simpan Data</button>
+                <button type="submit" class="btn btn-primary btn-lg float-right">Terima Barang</button>
             </form>
             <br>
             
