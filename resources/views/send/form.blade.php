@@ -17,10 +17,11 @@ Kirim Color Card
             @csrf
             <div class="card-header">
                 <strong>Color Card Kirim Ke : </strong> 
-                <select name="division_id">
+                <select name="division_id" required>
                     <option value="">- Pilih Divisi -</option>
-                    <option value="1">Citra Warna 01</option>
-                    <option value="2">Citra Warna 02</option>
+                    @foreach($divisions as $to)
+                        <option value="{{ $to->id }}">{{ $to->division_name }}</option>
+                    @endforeach
                 </select>
                 &nbsp; &nbsp;
                 <strong>Tanggal : </strong>
@@ -39,14 +40,14 @@ Kirim Color Card
                     <tbody>
                         <tr>
                             <td>
-                                <input type="text" class="form-control" name="cc_name[]" list="cc_list" required>
+                                <input type="text" class="form-control" name="colorcard_id[]" list="cc_list" required>
                                 <datalist id="cc_list">
                                     @foreach($colorcards as $cc)
                                     <option>{{ $cc->cc_name }}</option>
                                     @endforeach
                                 </datalist>
                             </td>
-                            <td><input type="number" class="form-control" name="amount[]"></td>
+                            <td><input type="number" class="form-control" name="amount[]" required></td>
                             <td><input type="text" class="form-control" name="description[]"></td>
                         </tr>
                     </tbody>
@@ -72,14 +73,14 @@ $(document).ready(function(){
         e.preventDefault();
         row++;
         var html = '<tr id="row'+row+'">';
-        html += "<td> <input type='text' class='form-control' name='cc_name[]' list='cc_list' required>";
+        html += "<td> <input type='text' class='form-control' name='colorcard_id[]' list='cc_list' required>";
         html += "<datalist id='cc_list'>";
         html += "<?php foreach($colorcards as $cc){ ?>";
         html += "<option>{{ $cc->cc_name }}</option>";
         html += "<?php } ?>";
         html += "</datalist></td>";
         html += "<th><input type='number' name='amount[]' class='form-control' required></th>";
-        html += "<th><input type='text'  name='description[]' class='form-control' required></th>";
+        html += "<th><input type='text'  name='description[]' class='form-control'></th>";
         html += '<td><button type="button" data-row="row'+row+'" class="btn btn-sm btn-danger fa fa-minus btn-minus"></button></td>';
         html += '</tr>';
         $('#sendTable').append(html);

@@ -98,10 +98,8 @@ class DivisionController extends Controller
     {
         $delete = Division::destroy($id);
         if($delete){
-            
             return redirect()->route('division.index');
         } else {
-            
             return redirect()->route('division.index');
         }
     

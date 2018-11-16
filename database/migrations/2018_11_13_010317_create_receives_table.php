@@ -15,6 +15,7 @@ class CreateReceivesTable extends Migration
     {
         Schema::create('receives', function (Blueprint $table) {
             $table->increments('id');
+            $table->date('date');
             $table->integer('colorcard_id')->unsigned();
             $table->integer('qty')->default(0);
             $table->string('descriptions')->nullable();

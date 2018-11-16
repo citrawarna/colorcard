@@ -26,7 +26,6 @@ Data Division
                         <td>{{ $divisi->division_name }}</td>
                         <td>
                             <form action="{{ route('division.destroy', ['id' => $divisi->id ]) }}" method="post">
-                            
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin Delete Data?')">
                                     Hapus
                                 </button>
