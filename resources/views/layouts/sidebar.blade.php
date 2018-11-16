@@ -67,7 +67,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('colorcard.index') }}" class="nav-link {{ ($menu==4 ? 'active' : '') }} ">
+                            <a href="{{ route('send.index') }}" class="nav-link {{ ($menu==4 ? 'active' : '') }} ">
                                 <i class="fa fa-circle-o nav-icon"></i>
                                 <p>Kirim Barang</p>
                             </a>

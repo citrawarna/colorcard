@@ -17,7 +17,7 @@ class CreateReceivesTable extends Migration
             $table->increments('id');
             $table->integer('colorcard_id')->unsigned();
             $table->integer('qty')->default(0);
-            $table->string('descriptions');
+            $table->string('descriptions')->nullable();
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('colorcard_id')->references('id')->on('colorcards')->onDelete('cascade');

@@ -24,4 +24,4 @@ Route::get('receive', 'ReceiveController@form')->middleware('auth')->name('recei
 
 Route::post('receive/store', 'ReceiveController@store')->middleware('auth')->name('receive.store');
 
-Route::get('autocomplete', 'ReceiveController@autocomplete');
+Route::get('send', 'SendController@form')->middleware('auth')->name('send.index');

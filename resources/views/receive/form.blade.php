@@ -5,41 +5,6 @@ Form Terima Barang
 @endsection
 
 @section('content')
-<style>
-    .autocomplete {
-    /*the container must be positioned relative:*/
-    position: relative;
-    }
-    .autocomplete-items {
-    position: absolute;
-    border: 1px solid #d4d4d4;
-    border-bottom: none;
-    border-top: none;
-    z-index: 99;
-    /*position the autocomplete items to be the same width as the container:*/
-    top: 100%;
-    left: 0;
-    right: 0;
-    }
-
-    .autocomplete-items div {
-    padding: 10px;
-    cursor: pointer;
-    background-color: #fff; 
-    border-bottom: 1px solid #d4d4d4; 
-    }
-
-    .autocomplete-items div:hover {
-    /*when hovering an item:*/
-    background-color: #e9e9e9; 
-    }
-
-    .autocomplete-active {
-    /*when navigating through the items using the arrow keys:*/
-    background-color: DodgerBlue !important; 
-    color: #ffffff; 
-    }
-</style>
 
 <section class="content col-md-12">
     @if ($errors->any())
@@ -49,7 +14,7 @@ Form Terima Barang
     @endif
     <div class="card card-warning card-outline">
         <div class="card-header">
-            <strong><a href="#" class="btn-plus"> <i class="fa fa-plus"></i> Tambah Form</a></strong>
+            Masukan Color Card yang Diterima.
         </div>
         <div class="card-body">
             <form action="{{ route('receive.store') }}" method="post" autocomplete="off">
@@ -79,7 +44,8 @@ Form Terima Barang
                        
                     </tbody>
                 </table>
-                <button type="submit" class="btn btn-primary btn-lg ">Simpan Data</button>
+                <strong><a href="#" class="btn-plus"> <i class="fa fa-plus"></i> Tambah Form</a></strong><br><br>
+                <button type="submit" class="btn btn-primary btn-lg float-right">Simpan Data</button>
             </form>
             <br>
             
