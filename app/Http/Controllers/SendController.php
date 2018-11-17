@@ -25,12 +25,14 @@ class SendController extends Controller
             'date' => 'required|date'
         ]);
 
+        //insert menggunakan looping
         for($i=0; $i < count($request->colorcard_id); $i++){
-            $cc_id = ColorCard::where('cc_name', $request->colorcard_id[$i])->first();
+            //panggil method di file Helpers;
+            $cc_id = getCcIdFromDataList($request->colorcard_id[$i]);
             Send::create([
                 'division_id' => $request->division_id,
                 'date' => $request->date,
-                'colorcard_id' => $cc_id->id,
+                'colorcard_id' => $cc_id,
                 'amount' => $request->amount[$i],
                 'description' => $request->description[$i]
             ]);       

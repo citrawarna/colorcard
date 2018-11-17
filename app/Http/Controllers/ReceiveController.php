@@ -24,12 +24,13 @@ class ReceiveController extends Controller
             'date' => 'required|date'
         ]);
 
-
+        //data di insert sambil ngelooping..
         for($i=0; $i < count($request->cc_name); $i++){
-            $cc_id = ColorCard::where('cc_name', $request->cc_name[$i])->first();
+            //panggil method yang ada di file Helper
+            $cc_id = getCcIdFromDataList($request->cc_name[$i]);
             Receive::create([
                 'date' => $request->date,
-                'colorcard_id' => $cc_id->id,
+                'colorcard_id' => $cc_id,
                 'qty' => $request->qty[$i],
                 'descriptions' => $request->descriptions[$i]
             ]);       

@@ -97,7 +97,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('send.index') }}" class="nav-link {{ ($menu==7 ? 'active' : '') }} ">
+                            <a href="{{ route('stock.division') }}" class="nav-link {{ ($menu==7 ? 'active' : '') }} ">
                                 <i class="fa fa-circle-o nav-icon"></i>
                                 <p>Stok Divisi</p>
                             </a>

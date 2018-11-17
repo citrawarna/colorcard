@@ -31,3 +31,7 @@ Route::get('send', 'SendController@form')->middleware('auth')->name('send.index'
 Route::post('send/store', 'SendController@store')->middleware('auth')->name('send.store');
 
 Route::get('stock-pusat', 'StockController@pusat')->middleware('auth')->name('stock.pusat');
+
+Route::get('stock-division', 'StockController@division')->middleware('auth')->name('stock.division');
+
+Route::get('route-modal', 'StockController@stockDivision')->middleware('auth');
