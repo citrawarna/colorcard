@@ -7,7 +7,7 @@ Data Color Cards
 
 @section('content')
 <section class="content">
-    <div class="card card-warning card-outline">
+    <div class="card card-secondary card-outline">
         <div class="card-header">
             <a href="{{ route('colorcard.create') }}" class="btn btn-success">Tambah Category</a>
         </div>

@@ -54,8 +54,6 @@
                                 <p>Data Division</p>
                             </a>
                         </li>
-                        
-                        
                     </ul>
                 </li>
                 <li class="nav-item has-treeview {{ ($submenu == 2 ? 'menu-open' : '') }}">
@@ -80,6 +78,36 @@
                             </a>
                         </li>
                         
+                    </ul>
+                </li>
+
+                <li class="nav-item has-treeview {{ ($submenu == 3 ? 'menu-open' : '') }}">
+                    <a href="#" class="nav-link ">
+                        <i class="nav-icon fa fa-file"></i>
+                        <p>
+                        LAPORAN
+                        <i class="right fa fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('stock.pusat') }}" class="nav-link {{ ($menu==6 ? 'active' : '') }} ">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Stock Pusat</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('send.index') }}" class="nav-link {{ ($menu==7 ? 'active' : '') }} ">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Stok Divisi</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('send.index') }}" class="nav-link {{ ($menu==8 ? 'active' : '') }} ">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Kartu Stok</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                

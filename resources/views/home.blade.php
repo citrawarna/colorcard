@@ -13,7 +13,7 @@ Welcome
 @endif
 
 <section class="content">
-    <div class="card card-warning card-outline">
+    <div class="card card-secondary card-outline">
         <div class="card-header">
             <h3 class="card-title">Title Section</h3>
         </div>

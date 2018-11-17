@@ -13,7 +13,7 @@ Edit Color Card
                 <p class="alert alert-danger">{{ $error }}</p>
             @endforeach
         @endif
-        <div class="card card-warning card-outline">
+        <div class="card card-secondary card-outline">
             <div class="card-header">
                 <a href="{{ route('colorcard.index') }}" class="btn btn-warning btn-sm"> <i class="fa fa-chevron-left"></i> Back</a>
             </div>

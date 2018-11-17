@@ -12,7 +12,7 @@ Kirim Color Card
             <p class="alert alert-danger">{{ $error }}</p>
         @endforeach
     @endif
-    <div class="card card-warning card-outline">
+    <div class="card card-secondary card-outline">
         <form action="{{ route('send.store') }}" method="post">
             @csrf
             <div class="card-header">

@@ -9,7 +9,7 @@ Data Category
 
 <section class="content">
         
-    <div class="card card-warning card-outline">
+    <div class="card card-secondary card-outline">
         <div class="card-header">
             <a href="{{ route('category.create') }}" class="btn btn-success">Tambah Category</a>
         </div>

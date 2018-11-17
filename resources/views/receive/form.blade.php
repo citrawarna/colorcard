@@ -12,7 +12,7 @@ Form Terima Barang
             <p class="alert alert-danger">{{ $error }}</p>
         @endforeach
     @endif
-    <div class="card card-warning card-outline">
+    <div class="card card-secondary card-outline">
         <form action="{{ route('receive.store') }}" method="post" autocomplete="off">
             <div class="card-header">
                 <strong>Tanggal : </strong> <input type="text" name="date" required id="datepicker">
