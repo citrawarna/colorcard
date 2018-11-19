@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateReceivesTable extends Migration
+class CreateTableRepairStocks extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateReceivesTable extends Migration
      */
     public function up()
     {
-        Schema::create('receives', function (Blueprint $table) {
+        Schema::create('repair_stocks', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('date');
             $table->integer('colorcard_id')->unsigned();
-            $table->integer('qty')->default(0);
-            $table->string('descriptions')->nullable();
+            $table->integer('division_id')->nullable()->unsigned();
+            $table->date('date');
+            $table->integer('repair_qty');
             $table->timestamps();
-            $table->softDeletes();
             $table->foreign('colorcard_id')->references('id')->on('color_cards')->onDelete('cascade');
+            $table->foreign('division_id')->references('id')->on('divisions')->onDelete('cascade');
         });
     }
 
@@ -32,6 +32,6 @@ class CreateReceivesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('receives');
+        Schema::dropIfExists('repair_stocks');
     }
 }

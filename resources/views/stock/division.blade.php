@@ -25,7 +25,7 @@ Stock Divisi
                         <td>{{ $no++ }}</td>
                         <td>{{ $divisi->division_name }}</td>
                         <td>
-                            <a href="javascript:void(0);" data-href="{{ URL('route-modal?divisi='.$divisi->id) }}" class="btn btn-info btn-sm openPopup">Lihat Stock</a>
+                            <a href="{{ URL('stock-division/detail?divisi='.$divisi->id) }}" class="btn btn-info btn-sm openPopup">Lihat Stock</a>
                         </td>
                     </tr>
                     @endforeach
@@ -37,33 +37,9 @@ Stock Divisi
     </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-        
-            <div class="modal-body">
-                
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-         
-            </div>
-        </div>
-    </div>
-</div>
+
 @endsection
 
 @push('scripts')
-    <script>
-    $(document).ready(function(){
-        $('.openPopup').on('click',function(){
-            var dataURL = $(this).attr('data-href');
-            console.log(dataURL);
-            $('.modal-body').load(dataURL,function(){
-                $('#detailModal').modal({show:true});
-            });
-        }); 
-    });
-    </script>
+   
 @endpush

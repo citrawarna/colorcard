@@ -33,7 +33,9 @@ class StockController extends Controller
         $divisi_id = $request->get('divisi');
         $data['stockColorcard'] = showCcDivisi($divisi_id);
         $data['divisi_name'] = Division::find($divisi_id);
-        return view('stock.modal-stock', $data);
+        $data['submenu'] = 3;
+        $data['menu'] = 7;
+        return view('stock.stock-division', $data);
     }
 
 

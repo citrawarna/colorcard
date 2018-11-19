@@ -35,3 +35,5 @@ Route::get('stock-pusat', 'StockController@pusat')->middleware('auth')->name('st
 Route::get('stock-division', 'StockController@division')->middleware('auth')->name('stock.division');
 
 Route::get('route-modal', 'StockController@stockDivision')->middleware('auth');
+
+Route::get('stock-division/detail', 'StockController@stockDivision')->middleware('auth')->name('stock.division-detail');

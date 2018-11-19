@@ -24,3 +24,4 @@
 @else 
 <strong style="color:red">Tidak Ada Stock Color Card</strong>
 @endif
+

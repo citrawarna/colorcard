@@ -23,7 +23,7 @@ class CreateSendsTable extends Migration
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('division_id')->references('id')->on('divisions')->onDelete('cascade');
-            $table->foreign('colorcard_id')->references('id')->on('colorcards')->onDelete('cascade');
+            $table->foreign('colorcard_id')->references('id')->on('color_cards')->onDelete('cascade');
         });
     }
 

@@ -19,5 +19,9 @@ class ColorCard extends Model
     public function receive(){
         return $this->belongsTo('App\Receive');
     }
+
+   public function sends(){
+       return $this->hasMany('App\Send');
+   }
 }
 
