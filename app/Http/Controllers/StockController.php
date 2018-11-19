@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\ColorCard;
 use App\Division;
 use App\Send;
+use App\RepairStock;
 
 class StockController extends Controller
 {
@@ -35,7 +36,39 @@ class StockController extends Controller
         $data['divisi_name'] = Division::find($divisi_id);
         $data['submenu'] = 3;
         $data['menu'] = 7;
+        $data['no'] = 1;
         return view('stock.stock-division', $data);
+    }
+
+    //sesuaikan stock
+    public function repairStockDivision(Request $request){
+        $data_cc = showDetailCcDivisi($request->division_id, $request->colorcard_id);
+        $stock_now = $data_cc[0]->stocks;
+        $stock_input = $request->difference;
+        //dd($stock_now);
+
+        
+        $difference = abs($stock_now - $stock_input);
+
+        if($stock_now > $stock_input){
+            $type = 'decrease';
+        } else {
+            $type = 'increase';
+        }
+
+        RepairStock::create([
+            'colorcard_id' => $request->colorcard_id,
+            'division_id' => $request->division_id,
+            'date' => date('Y-m-d'),
+            'difference' => $difference,
+            'type' => $type,
+            'reason' => $request->reason
+        ]);
+
+
+
+
+        
     }
 
 

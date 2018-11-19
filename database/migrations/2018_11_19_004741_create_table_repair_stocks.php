@@ -18,7 +18,7 @@ class CreateTableRepairStocks extends Migration
             $table->integer('colorcard_id')->unsigned();
             $table->integer('division_id')->nullable()->unsigned();
             $table->date('date');
-            $table->integer('repair_qty');
+            $table->integer('difference');
             $table->timestamps();
             $table->foreign('colorcard_id')->references('id')->on('color_cards')->onDelete('cascade');
             $table->foreign('division_id')->references('id')->on('divisions')->onDelete('cascade');

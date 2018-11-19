@@ -17,7 +17,7 @@ class SendController extends Controller
         return view('send.form', $data);
     }
 
-    //SEMENTARA LOGICNYA GINI DULU, NANTI KLO SCM MINTA REVISI BARU UBAH
+    
     public function store(Request $request){
         //validasi data
         $validate = $request->validate([
@@ -73,6 +73,7 @@ class SendController extends Controller
             return redirect()->route('send.index');
         }
         
+        //SEMENTARA LOGICNYA GINI DULU, NANTI KLO SCM MINTA REVISI BARU UBAH
         
     }
 }

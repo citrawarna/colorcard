@@ -23,12 +23,23 @@ function calculateStock($cc_id){
 }
 
 function showCcDivisi($divisi_id){
+    return $query = DB::select("SELECT cc_name, division_id, colorcard_id, sum(amount) as stocks FROM color_cards 
+        right join sends on color_cards.id = sends.colorcard_id
+        where division_id = $divisi_id 
+        group by sends.colorcard_id
+        order by cc_name asc ");
+
+}
+
+function dataRepair($colorcard_id, $division_id){
+
+}
+
+function showDetailCcDivisi($divisi_id, $cc_id){
     return DB::select("SELECT cc_name, division_id, colorcard_id, sum(amount) as stocks FROM sends 
         inner join color_cards on color_cards.id = sends.colorcard_id
         where division_id = $divisi_id 
-        OR sends.deleted_at != NULL 
-        group by sends.colorcard_id
-        order by cc_name asc ");
+        AND colorcard_id = $cc_id");
 }
 
 function checkStockCC($cc_id, $amount){

@@ -37,3 +37,5 @@ Route::get('stock-division', 'StockController@division')->middleware('auth')->na
 Route::get('route-modal', 'StockController@stockDivision')->middleware('auth');
 
 Route::get('stock-division/detail', 'StockController@stockDivision')->middleware('auth')->name('stock.division-detail');
+
+Route::post('repair-stocks', 'StockController@repairStockDivision')->middleware('auth')->name('repair.stock-division');
