@@ -29,7 +29,7 @@ Data Color Card {{ $divisi_name->division_name }}
                     <tr>
                         <td>{{ $no++ }}</td>
                         <td>{{ $cc->cc_name }}</td>
-                        <td>{{ $cc->stocks }}</td>
+                        <td>{{ dataRepair($cc->colorcard_id, $cc->division_id, $cc->stocks) }}</td>
                         <td>
                             <a href="" data-toggle="modal" data-target="#exampleModal" data-cc="{{ $cc->cc_name }}" data-cc_id="{{ $cc->colorcard_id }}" data-divisi="{{ $divisi_name->id }}" > Sesuaikan </a>
                         </td>

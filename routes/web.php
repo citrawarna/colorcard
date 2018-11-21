@@ -38,4 +38,6 @@ Route::get('route-modal', 'StockController@stockDivision')->middleware('auth');
 
 Route::get('stock-division/detail', 'StockController@stockDivision')->middleware('auth')->name('stock.division-detail');
 
-Route::post('repair-stocks', 'StockController@repairStockDivision')->middleware('auth')->name('repair.stock-division');
+Route::post('repair-stocks-division', 'StockController@repairStockDivision')->middleware('auth')->name('repair.stock-division');
+
+Route::post('repair-stocks-pusat', 'StockController@repairStockPusat')->middleware('auth')->name('repair.stock-pusat');

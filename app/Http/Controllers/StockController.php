@@ -40,7 +40,7 @@ class StockController extends Controller
         return view('stock.stock-division', $data);
     }
 
-    //sesuaikan stock
+    //sesuaikan stock divisi
     public function repairStockDivision(Request $request){
         $data_cc = showDetailCcDivisi($request->division_id, $request->colorcard_id);
         $stock_now = $data_cc[0]->stocks;
@@ -56,6 +56,8 @@ class StockController extends Controller
             $type = 'increase';
         }
 
+        doExpiredRepair($request->colorcard_id, $request->division_id);
+
         RepairStock::create([
             'colorcard_id' => $request->colorcard_id,
             'division_id' => $request->division_id,
@@ -65,10 +67,37 @@ class StockController extends Controller
             'reason' => $request->reason
         ]);
 
-
-
-
+        $request->session()->flash('success', 'Berhasil Melakukan Update Stock Divisi');
+        return redirect()->back();
         
+    }
+
+    public function repairStockPusat(Request $request){
+        $stock_now = $request->stock;
+        $stock_input = $request->difference;
+
+        $difference = abs($stock_now - $stock_input);
+
+        if($stock_now > $stock_input){
+            $type = 'decrease';
+        } else {
+            $type = 'increase';
+        }
+
+        //expired kan column sebelumnya
+        doExpiredRepair($request->colorcard_id);
+
+        RepairStock::create([
+            'colorcard_id' => $request->colorcard_id,
+            'date' => date('Y-m-d'),
+            'difference' => $difference,
+            'type' => $type,
+            'reason' => $request->reason
+        ]);
+
+        $request->session()->flash('success', 'Berhasil Melakukan Update Stock Pusat');
+        return redirect()->route('stock.pusat');
+
     }
 
 
