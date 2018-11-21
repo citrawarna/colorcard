@@ -41,3 +41,7 @@ Route::get('stock-division/detail', 'StockController@stockDivision')->middleware
 Route::post('repair-stocks-division', 'StockController@repairStockDivision')->middleware('auth')->name('repair.stock-division');
 
 Route::post('repair-stocks-pusat', 'StockController@repairStockPusat')->middleware('auth')->name('repair.stock-pusat');
+
+Route::get('kartu-stock', 'KartuStockController@index')->middleware('auth')->name('kartu-stock.index');
+
+Route::get('kartu-stock/search', 'KartuStockController@search')->middleware('auth')->name('kartu-stock.search');

@@ -65,8 +65,9 @@ function showDetailCcDivisi($divisi_id, $cc_id){
         AND colorcard_id = $cc_id");
 }
 
-function checkStockCC($cc_id, $amount){
-    $stock_cc = calculateStock($cc_id);
+function checkStockCC($cc_id, $amount, $division_id){
+    $stock_cc = dataRepair($cc_id, null, calculateStock($cc_id));
+
     if($stock_cc > $amount){
         return $amount;
     } else {
@@ -84,5 +85,6 @@ function doExpiredRepair($cc_id, $division_id = null){
     }
     
 }
+
 
 ?>

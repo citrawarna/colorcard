@@ -34,7 +34,7 @@ class SendController extends Controller
             //panggil method di file Helpers;
             $cc_id = getCcIdFromDataList($request->colorcard_id[$i]);
             //cek stok cc dan inputan
-            $check_stock_cc = checkStockCC($cc_id, $request->amount[$i]);
+            $check_stock_cc = checkStockCC($cc_id, $request->amount[$i], $request->division_id);
             $send_id = '';
             //mendapatkan send id dari loop yang baru diinput
             $send_id .= Send::create([

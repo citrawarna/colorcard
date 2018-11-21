@@ -42,6 +42,12 @@ class StockController extends Controller
 
     //sesuaikan stock divisi
     public function repairStockDivision(Request $request){
+        $validate = $request->validate([
+            'colorcard_id' => 'required',
+            'division_id' => 'required',
+            'difference' => 'required',
+            'reason' => 'required'
+        ]);
         $data_cc = showDetailCcDivisi($request->division_id, $request->colorcard_id);
         $stock_now = $data_cc[0]->stocks;
         $stock_input = $request->difference;
@@ -56,6 +62,7 @@ class StockController extends Controller
             $type = 'increase';
         }
 
+        //expired kan column sebelumnya
         doExpiredRepair($request->colorcard_id, $request->division_id);
 
         RepairStock::create([
@@ -73,6 +80,11 @@ class StockController extends Controller
     }
 
     public function repairStockPusat(Request $request){
+        $validate = $request->validate([
+            'colorcard_id' => 'required',
+            'difference' => 'required',
+            'reason' => 'required'
+        ]);
         $stock_now = $request->stock;
         $stock_input = $request->difference;
 

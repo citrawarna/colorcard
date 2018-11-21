@@ -6,6 +6,11 @@ Stock Pusat
 
 @section('content')
 <div class="content col-md-12">
+    @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            <p class="alert alert-danger">{{ $error }}</p>
+        @endforeach
+    @endif
     <div class="card card-secondary card-outline">
         <div class="card-header">
             Data Stock Pusat

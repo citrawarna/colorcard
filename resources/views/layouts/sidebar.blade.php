@@ -103,7 +103,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('send.index') }}" class="nav-link {{ ($menu==8 ? 'active' : '') }} ">
+                            <a href="{{ route('kartu-stock.index') }}" class="nav-link {{ ($menu==8 ? 'active' : '') }} ">
                                 <i class="fa fa-circle-o nav-icon"></i>
                                 <p>Kartu Stok</p>
                             </a>
