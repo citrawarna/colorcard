@@ -105,6 +105,7 @@
                                 $masuk = '';
                                 $keluar = $perbaiki->difference;
                                 $totalOut += (int) $perbaiki->difference; 
+                                $reason = "Repaired!";
                             }
                             
 
