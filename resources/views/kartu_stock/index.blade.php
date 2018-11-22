@@ -16,7 +16,7 @@
                 Cek Data Barang
             </div>
             <div class="card-body">
-                <form action="{{ route('kartu-stock.search') }}" method="get">
+                <form action="{{ route('kartu-stock.search') }}" method="get" autocomplete="off">
          
                     <div class="row">
                         <div class="col-md-6">
@@ -35,7 +35,12 @@
                         @endforeach
                     </select>
                     <br>
-                    <input type="text" class="form-control" name="colorcard" required placeholder="NAMA BARANG">
+                    <input type="text" class="form-control" name="colorcard" required placeholder="NAMA BARANG" list="cc_list">
+                    <datalist id="cc_list">
+                        @foreach($colorcards as $cc)
+                        <option>{{ $cc->cc_name }}</option>
+                        @endforeach
+                    </datalist>
                     <br>
                     <input type="submit" class="btn btn-secondary float-right" value="Search">
                 </form>
