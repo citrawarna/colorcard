@@ -7,11 +7,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ColorCard extends Model
 {
-    use SoftDeletes;
+    //use SoftDeletes;
     protected $fillable = ['id','cc_name', 'category_id', 'tag'];
     protected $dates = ['deleted_at'];
 
-    
     public function category(){
         return $this->belongsTo('App\Category');
     }

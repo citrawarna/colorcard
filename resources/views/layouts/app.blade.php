@@ -92,12 +92,12 @@
     <!-- CHECKBOX -->
     <script src="{{ asset('plugins/iCheck/icheck.min.js') }}"></script>
 
-    <script>
+    {{-- <script>
     $(function () {
         $("#myTable").DataTable();
     });
    
-    </script>
+    </script> --}}
 
     @stack('scripts')
           

@@ -62,7 +62,7 @@ class StockController extends Controller
             $type = 'increase';
         }
 
-        //expired kan column sebelumnya
+        //expired kan column sebelumnya 
         doExpiredRepair($request->colorcard_id, $request->division_id);
 
         RepairStock::create([

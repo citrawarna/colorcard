@@ -17,7 +17,7 @@ class CreateColorcardsTable extends Migration
             $table->increments('id');
             $table->string('cc_name');
             $table->integer('category_id')->unsigned();
-            $table->string('tag');
+            $table->string('tag')->nullable();
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
